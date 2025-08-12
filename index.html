@@ -6,25 +6,32 @@
   <title>CrackAlgo — Professional Online Services</title>
 
   <link rel="stylesheet" href="/style.css">
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <header class="navbar" role="banner">
-    <div class="left">
-      <button id="menuBtn" class="icon-btn" aria-label="Open menu" title="Menu"><i class="fa fa-bars"></i></button>
-      <span class="brand"><i class="fa fa-rocket brand-icon" aria-hidden="true"></i>CrackAlgo</span>
-    </div>
-    <div class="controls">
-      <button id="darkToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon"></i></button>
+  <header class="navbar" role="banner" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button id="menuBtn" class="icon-btn" aria-label="Open menu" title="Menu"><i class="fa fa-bars"></i></button>
+        <div class="brand"><i class="fa fa-rocket brand-icon" aria-hidden="true"></i><span class="brand-name">CrackAlgo</span></div>
+      </div>
+      <div class="nav-right">
+        <button id="darkToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon"></i></button>
+      </div>
     </div>
   </header>
 
   <!-- SIDE MENU -->
   <nav class="side-menu" id="sideMenu" aria-hidden="true" aria-label="Main menu">
-    <h3>Menu</h3>
+    <div class="side-top">
+      <h3>CrackAlgo</h3>
+      <button id="sideClose" class="icon-btn" aria-label="Close menu"><i class="fa fa-times"></i></button>
+    </div>
     <ul>
       <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
       <li><a href="#about"><i class="fa fa-user"></i> About Us</a></li>
@@ -38,137 +45,111 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero" id="home" aria-label="Home">
+    <section class="hero" id="home" aria-label="Home" data-aos="fade-up">
       <div class="container">
-        <h1>CrackAlgo — Smart digital solutions</h1>
-        <p>We build beautiful websites, craft compelling content, edit media professionally, and secure your digital assets. Quality-driven services that scale with your ambition.</p>
+        <h1 data-aos="zoom-in" data-aos-delay="100">CrackAlgo — Smart digital solutions</h1>
+        <p data-aos="fade-up" data-aos-delay="200">We build elegant websites, craft compelling content, edit media professionally, and secure your digital assets. Quality-driven services that scale with your ambition.</p>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="about">
+    <section id="about" class="about" data-aos="fade-up">
       <div class="container">
         <h2>About Us</h2>
-        <p>CrackAlgo is a multi-disciplinary digital studio combining design, development, content, and cybersecurity expertise. Founded by passionate creators and engineers, our mission is to help startups, creators, and businesses deliver clearer messages and stronger digital experiences. We value reliability, transparency, and fast delivery.</p>
+        <p>CrackAlgo is a multi-disciplinary digital studio combining design, development, content, and cybersecurity expertise. Founded by creators and engineers, our mission is to help startups, creators, and businesses deliver better digital experiences. We value reliability, transparency, and fast delivery.</p>
       </div>
     </section>
 
     <!-- SERVICES -->
     <section id="services" class="services">
       <div class="container">
-        <h2>Our Services</h2>
+        <h2 data-aos="fade-up">Our Services</h2>
         <div class="services-grid" id="servicesGrid">
-
-          <!-- Card template repeated for all services -->
-          <article class="card" aria-labelledby="s1">
-            <img src="/images/webdesign.jpg" alt="Web design sample">
+          <!-- Web Design -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="50">
+            <img src="/images/webdesign.jpg" alt="Web design">
             <div class="card-body">
-              <h3 id="s1">Web Design</h3>
-              <p>Modern, mobile-first visual design that converts visitors into customers. Wireframes, mockups, and interactive prototypes.</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Starter Design — $50 (single page)</p>
-                <p>Pro Design — $120 (multi-page + prototype)</p>
-              </div>
+              <h3>Web Design</h3>
+              <p>Modern, responsive visual designs to convert visitors into customers.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Starter — $50</p><p>Pro — $120</p></div>
             </div>
           </article>
 
-          <article class="card" aria-labelledby="s2">
-            <img src="/images/webdev.jpg" alt="Website development sample">
+          <!-- Website Development -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="120">
+            <img src="/images/webdev.jpg" alt="Web development">
             <div class="card-body">
-              <h3 id="s2">Website Development</h3>
-              <p>Fast, secure websites (static and dynamic) built with modern stacks, SEO-friendly, and easy to maintain.</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Basic Site — $150 (up to 5 pages)</p>
-                <p>Business Site — $350 (custom features)</p>
-              </div>
+              <h3>Website Development</h3>
+              <p>Fast, secure websites built with modern stacks and SEO in mind.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Basic — $150</p><p>Business — $350</p></div>
             </div>
           </article>
 
-          <article class="card" aria-labelledby="s3">
-            <img src="/images/video.jpg" alt="Video editing sample">
+          <!-- Video Editing -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="190">
+            <img src="/images/video.jpg" alt="Video editing">
             <div class="card-body">
-              <h3 id="s3">Video Editing</h3>
-              <p>Professional video cuts, color grading, transitions, intros/outros — optimized for YouTube, ads, and social media.</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Hourly Edit — $15/hr</p>
-                <p>Project Edit — starting $60</p>
-              </div>
+              <h3>Video Editing</h3>
+              <p>Professional editing, grading and motion graphics for creators.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Hourly — $15/hr</p><p>Per project — from $60</p></div>
             </div>
           </article>
 
-          <article class="card" aria-labelledby="s4">
-            <img src="/images/photo.jpg" alt="Photo editing sample">
+          <!-- Photo Editing -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="260">
+            <img src="/images/photo.jpg" alt="Photo editing">
             <div class="card-body">
-              <h3 id="s4">Photo Editing</h3>
-              <p>Retouching, background removal, color correction, and image enhancements done with care for detail.</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Basic Retouch — $6/image</p>
-                <p>Advanced Composite — $18/image</p>
-              </div>
+              <h3>Photo Editing</h3>
+              <p>Retouching, background removal and color correction.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Basic — $6/image</p><p>Advanced — $18/image</p></div>
             </div>
           </article>
 
-          <article class="card" aria-labelledby="s5">
-            <img src="/images/graphic.jpg" alt="Graphic design sample">
+          <!-- Graphic Designing -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="330">
+            <img src="/images/graphic.jpg" alt="Graphic design">
             <div class="card-body">
-              <h3 id="s5">Graphic Designing</h3>
-              <p>Logos, social media kits, banners, and branded visuals tailored to your voice and audience.</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Logo — $35</p>
-                <p>Social Media Package — $65</p>
-              </div>
+              <h3>Graphic Designing</h3>
+              <p>Logos, social assets, banners and branding elements.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Logo — $35</p><p>Package — $65</p></div>
             </div>
           </article>
 
-          <article class="card" aria-labelledby="s6">
-            <img src="/images/contentwriting.jpg" alt="Content writing sample">
+          <!-- Content Writing -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="400">
+            <img src="/images/contentwriting.jpg" alt="Content writing">
             <div class="card-body">
-              <h3 id="s6">Content Writing</h3>
-              <p>SEO-friendly articles, web copy, product descriptions, and ad copy written to engage and convert.</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Blog Article — $18 (700–1200 words)</p>
-                <p>Web Copy — $30 (per page)</p>
-              </div>
+              <h3>Content Writing</h3>
+              <p>SEO-friendly articles, web copy, and ad copy that converts.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Blog — $18</p><p>Web copy — $30</p></div>
             </div>
           </article>
 
-          <article class="card" aria-labelledby="s7">
-            <img src="/images/contentdesign.jpg" alt="Content design sample">
+          <!-- Content Designing -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="470">
+            <img src="/images/contentdesign.jpg" alt="Content design">
             <div class="card-body">
-              <h3 id="s7">Content Designing</h3>
-              <p>Design and layout of documents, ebooks, presentations, and visual storytelling assets.</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Basic Layout — $25</p>
-                <p>Premium Layout — $55</p>
-              </div>
+              <h3>Content Designing</h3>
+              <p>Ebooks, presentations and visual storytelling layouts.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Basic — $25</p><p>Premium — $55</p></div>
             </div>
           </article>
 
-          <article class="card" aria-labelledby="s8">
-            <img src="/images/cybersecurity.jpg" alt="Cybersecurity service sample">
+          <!-- Ethical Hacking -->
+          <article class="card" data-aos="zoom-in" data-aos-delay="540">
+            <img src="/images/cybersecurity.jpg" alt="Cybersecurity">
             <div class="card-body">
-              <h3 id="s8">Ethical Hacking / Cybersecurity</h3>
-              <p>Professional vulnerability assessments, penetration tests, and security recommendations (legal & authorized only).</p>
-              <button class="price-toggle" aria-expanded="false">View Prices</button>
-              <div class="price-list" aria-hidden="true">
-                <strong>Prices</strong>
-                <p>Basic Scan — $60</p>
-                <p>Full Security Audit — $180</p>
-              </div>
+              <h3>Ethical Hacking / Cybersecurity</h3>
+              <p>Authorized vulnerability assessments and penetration testing.</p>
+              <button class="price-toggle">View Prices</button>
+              <div class="price-list"><p>Scan — $60</p><p>Full Audit — $180</p></div>
             </div>
           </article>
 
@@ -177,7 +158,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" data-aos="fade-up">
       <div class="container">
         <h2>Contact Us</h2>
         <p style="text-align:center;color:#4b5563;margin-bottom:12px">Send a message — we typically reply within 24–48 hours.</p>
@@ -185,16 +166,16 @@
         <form class="form" id="contactForm">
           <input type="text" name="name" placeholder="Your full name" required />
           <input type="email" name="email" placeholder="Your email address" required />
-          <input type="text" name="telegrm" placeholder="Your telegram user-name (faster response)" />
+          <input type="text" name="telegram" placeholder="Your telegram user name (for faster response)" />
           <textarea name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
           <button class="submit" type="submit">Send Message</button>
         </form>
 
-        <!-- Popup alert (success/failure) -->
+        <!-- Popup alert -->
         <div id="popup" class="popup" role="alert" aria-live="assertive" style="display:none">
           <div class="popup-inner">
             <div id="popupContent"></div>
-            <button id="popupClose" class="popup-close" aria-label="Close popup">&times;</button> 
+            <button id="popupClose" class="popup-close" aria-label="Close popup">&times;</button>
           </div>
         </div>
 
@@ -203,10 +184,39 @@
 
   </main>
 
-  <footer>
-    <div class="container">
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <div class="brand-logo"><i class="fa fa-rocket fa-2x"></i></div>
+        <div>
+          <h3>CrackAlgo</h3>
+          <p>Digital services: web design, development, media editing, content, and cybersecurity.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
       <small>&copy; <span id="year"></span> CrackAlgo — All rights reserved.</small>
-      <p>Dᴇsɪɢɴᴇᴅ ʙʏ <a href="https://t.me/urstark">Sᴛᴀʀᴋ</a></p>
     </div>
   </footer>
 
@@ -229,5 +239,7 @@
   </div>
 
   <script src="/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 700, once: true, easing: 'ease-out-back' }); </script>
 </body>
-                                                               </html>
+</html>
