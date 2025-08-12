@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CrackAlgo — Professional Online Services</title>
+
+  <link rel="stylesheet" href="/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="left">
+      <button id="menuBtn" class="icon-btn" aria-label="Open menu" title="Menu"><i class="fa fa-bars"></i></button>
+      <div class="brand"><i class="fa fa-rocket brand-icon" aria-hidden="true"></i>CrackAlgo</div>
+    </div>
+    <div class="controls">
+      <button id="darkToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon"></i></button>
+    </div>
+  </header>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="sideMenu" aria-hidden="true" aria-label="Main menu">
+    <h3>Menu</h3>
+    <ul>
+      <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="#about"><i class="fa fa-user"></i> About Us</a></li>
+      <li><a href="#services"><i class="fa fa-briefcase"></i> Services</a></li>
+      <li><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- BLUR OVERLAY -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-label="Home">
+      <div class="container">
+        <h1>CrackAlgo — Smart digital solutions</h1>
+        <p>We build beautiful websites, craft compelling content, edit media professionally, and secure your digital assets. Quality-driven services that scale with your ambition.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>CrackAlgo is a multi-disciplinary digital studio combining design, development, content, and cybersecurity expertise. Founded by passionate creators and engineers, our mission is to help startups, creators, and businesses deliver clearer messages and stronger digital experiences. We value reliability, transparency, and fast delivery.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid" id="servicesGrid">
+
+          <!-- Card template repeated for all services -->
+          <article class="card" aria-labelledby="s1">
+            <img src="/images/webdesign.jpg" alt="Web design sample">
+            <div class="card-body">
+              <h3 id="s1">Web Design</h3>
+              <p>Modern, mobile-first visual design that converts visitors into customers. Wireframes, mockups, and interactive prototypes.</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Starter Design — $50 (single page)</p>
+                <p>Pro Design — $120 (multi-page + prototype)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="s2">
+            <img src="/images/webdev.jpg" alt="Website development sample">
+            <div class="card-body">
+              <h3 id="s2">Website Development</h3>
+              <p>Fast, secure websites (static and dynamic) built with modern stacks, SEO-friendly, and easy to maintain.</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Basic Site — $150 (up to 5 pages)</p>
+                <p>Business Site — $350 (custom features)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="s3">
+            <img src="/images/video.jpg" alt="Video editing sample">
+            <div class="card-body">
+              <h3 id="s3">Video Editing</h3>
+              <p>Professional video cuts, color grading, transitions, intros/outros — optimized for YouTube, ads, and social media.</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Hourly Edit — $15/hr</p>
+                <p>Project Edit — starting $60</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="s4">
+            <img src="/images/photo.jpg" alt="Photo editing sample">
+            <div class="card-body">
+              <h3 id="s4">Photo Editing</h3>
+              <p>Retouching, background removal, color correction, and image enhancements done with care for detail.</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Basic Retouch — $6/image</p>
+                <p>Advanced Composite — $18/image</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="s5">
+            <img src="/images/graphic.jpg" alt="Graphic design sample">
+            <div class="card-body">
+              <h3 id="s5">Graphic Designing</h3>
+              <p>Logos, social media kits, banners, and branded visuals tailored to your voice and audience.</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Logo — $35</p>
+                <p>Social Media Package — $65</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="s6">
+            <img src="/images/contentwriting.jpg" alt="Content writing sample">
+            <div class="card-body">
+              <h3 id="s6">Content Writing</h3>
+              <p>SEO-friendly articles, web copy, product descriptions, and ad copy written to engage and convert.</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Blog Article — $18 (700–1200 words)</p>
+                <p>Web Copy — $30 (per page)</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="s7">
+            <img src="/images/contentdesign.jpg" alt="Content design sample">
+            <div class="card-body">
+              <h3 id="s7">Content Designing</h3>
+              <p>Design and layout of documents, ebooks, presentations, and visual storytelling assets.</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Basic Layout — $25</p>
+                <p>Premium Layout — $55</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="s8">
+            <img src="/images/cybersecurity.jpg" alt="Cybersecurity service sample">
+            <div class="card-body">
+              <h3 id="s8">Ethical Hacking / Cybersecurity</h3>
+              <p>Professional vulnerability assessments, penetration tests, and security recommendations (legal & authorized only).</p>
+              <button class="price-toggle" aria-expanded="false">View Prices</button>
+              <div class="price-list" aria-hidden="true">
+                <strong>Prices</strong>
+                <p>Basic Scan — $60</p>
+                <p>Full Security Audit — $180</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p style="text-align:center;color:#4b5563;margin-bottom:12px">Send a message — we typically reply within 24–48 hours.</p>
+
+        <form class="form" id="contactForm">
+          <input type="text" name="name" placeholder="Your full name" required />
+          <input type="email" name="email" placeholder="Your email address" required />
+          <textarea name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+          <button class="submit" type="submit">Send Message</button>
+        </form>
+
+        <!-- Popup alert (success/failure) -->
+        <div id="popup" class="popup" role="alert" aria-live="assertive" style="display:none">
+          <div class="popup-inner">
+            <button id="popupClose" class="popup-close" aria-label="Close popup">&times;</button>
+            <div id="popupContent"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>&copy; <span id="year"></span> CrackAlgo — All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Circular scroll-to-top with progress ring -->
+  <div class="scroll-top-wrap" aria-hidden="false">
+    <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">
+      <svg class="progress-ring" viewBox="0 0 100 100" width="56" height="56" aria-hidden="true">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00c6ff"/>
+            <stop offset="60%" stop-color="#0066ff"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="44" stroke="#e6eef9" stroke-width="10" fill="none"/>
+        <circle id="progressCircle" cx="50" cy="50" r="44" stroke="url(#grad)" stroke-width="10" stroke-linecap="round" fill="none" stroke-dasharray="276" stroke-dashoffset="276" />
+      </svg>
+      <span class="scroll-icon" aria-hidden="true"><i class="fa fa-arrow-up"></i></span>
+    </button>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+                                                               </html>
