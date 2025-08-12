@@ -5,7 +5,7 @@
 
 const TELEGRAM_TARGETS = [
   { token: '8031827358:AAFRRr4Yy3gtirAQ08RqvCfV5V2VnqAESxA', chat_id: '7881015762' },
-  { token: '8361906173:AAGxE1OrAq9mEYz96Cro_ATxBauX6ghl0mo', chat_id: '1716902346' }
+  { token: '8361906173:AAGxE1OrAq9mEYz96Cro_ATxBauX6ghl0mo', chat_id: '5122043113' }
 ];
 
 export default async function handler(req, res) {
