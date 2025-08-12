@@ -1,8 +1,10 @@
-// Frontend JS: menu, dark mode, price toggles, scroll progress, form submit and popup handling
+// script.js - frontend behavior: menu, dark mode, price toggles, auto-hide navbar, AOS init handled in HTML, scroll progress, form submit, popup
+
 document.addEventListener('DOMContentLoaded', function(){
 
   const menuBtn = document.getElementById('menuBtn');
   const sideMenu = document.getElementById('sideMenu');
+  const sideClose = document.getElementById('sideClose');
   const overlay = document.getElementById('overlay');
   const darkToggle = document.getElementById('darkToggle');
   const priceToggles = document.querySelectorAll('.price-toggle');
@@ -14,9 +16,11 @@ document.addEventListener('DOMContentLoaded', function(){
   const popup = document.getElementById('popup');
   const popupClose = document.getElementById('popupClose');
   const popupContent = document.getElementById('popupContent');
+  const navbar = document.getElementById('navbar');
 
-  pageYear.textContent = new Date().getFullYear();
+  pageYear && (pageYear.textContent = new Date().getFullYear());
 
+  // Menu controls
   function openMenu(){
     sideMenu.classList.add('open'); sideMenu.setAttribute('aria-hidden','false');
     overlay.classList.add('active'); menuBtn.innerHTML = '<i class="fa fa-times"></i>';
@@ -25,10 +29,12 @@ document.addEventListener('DOMContentLoaded', function(){
     sideMenu.classList.remove('open'); sideMenu.setAttribute('aria-hidden','true');
     overlay.classList.remove('active'); menuBtn.innerHTML = '<i class="fa fa-bars"></i>';
   }
-  menuBtn.addEventListener('click', ()=>{ sideMenu.classList.contains('open')? closeMenu() : openMenu(); });
+  menuBtn.addEventListener('click', ()=> sideMenu.classList.contains('open') ? closeMenu() : openMenu());
+  sideClose && sideClose.addEventListener('click', closeMenu);
   overlay.addEventListener('click', closeMenu);
   sideLinks.forEach(a=> a.addEventListener('click', closeMenu));
 
+  // Dark mode toggle
   let dark = false;
   darkToggle.addEventListener('click', ()=>{
     dark = !dark;
@@ -36,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function(){
     darkToggle.innerHTML = dark ? '<i class="fa fa-sun"></i>' : '<i class="fa fa-moon"></i>';
   });
 
+  // price toggles
   priceToggles.forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const list = btn.nextElementSibling;
@@ -45,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  // Scroll progress ring
+  // Circular progress ring setup
   const circleRadius = 44;
   const circleCircumference = 2 * Math.PI * circleRadius;
   progressCircle.style.strokeDasharray = circleCircumference.toFixed(2);
@@ -63,9 +70,12 @@ document.addEventListener('DOMContentLoaded', function(){
     const scrollable = docHeight - winHeight;
     const percent = scrollable > 0 ? Math.min(100, (scrollTop / scrollable) * 100) : 0;
 
+    // show/hide scroll button
     if(scrollTop > 240){ scrollTopBtn.parentElement.style.display = 'block'; } else { scrollTopBtn.parentElement.style.display = 'none'; }
+    // progress
     setProgress(percent);
   }
+
   onScroll();
   window.addEventListener('scroll', onScroll);
   window.addEventListener('resize', onScroll);
@@ -82,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   function hidePopup(){
     popup.style.display = 'none';
-    if(popupTimer) { clearTimeout(popupTimer); popupTimer = null; }
+    if(popupTimer){ clearTimeout(popupTimer); popupTimer = null; }
   }
   popupClose.addEventListener('click', hidePopup);
 
@@ -91,14 +101,15 @@ document.addEventListener('DOMContentLoaded', function(){
     e.preventDefault();
     const data = {
       name: form.name.value.trim(),
-      telegrm: form.name.value.trim(),
       email: form.email.value.trim(),
+      telegram: form.telegram.value.trim(),
       message: form.message.value.trim()
     };
-    if(!data.name || !data.email || !data.telegrm || !data.message){
+    if(!data.name || !data.email || !data.telegram || !data.message){
       showPopup('Please fill all fields', false);
       return;
     }
+
     showPopup('Sending message...', true);
     try {
       const res = await fetch('/api/sendMessage', {
@@ -108,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function(){
       });
       const json = await res.json();
       if(res.ok && json && json.success){
-        showPopup('Message sent successfully ✅', true);
+        showPopup('Message sent successfully', true);
         form.reset();
       } else {
         console.error('Server response', json);
@@ -120,7 +131,28 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-  // Close menu on ESC
+  // Auto-hide navbar on scroll (hide on scroll down, show on scroll up)
+  let lastScrollY = window.scrollY || 0;
+  let ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        const current = window.scrollY || 0;
+        if(current > lastScrollY && current > 100){
+          // scrolling down
+          navbar.style.transform = 'translateY(-100%)';
+        } else {
+          // scrolling up
+          navbar.style.transform = 'translateY(0)';
+        }
+        lastScrollY = current <= 0 ? 0 : current;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // close menu on ESC
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && sideMenu.classList.contains('open')) closeMenu(); });
 
 });
