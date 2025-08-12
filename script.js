@@ -91,10 +91,11 @@ document.addEventListener('DOMContentLoaded', function(){
     e.preventDefault();
     const data = {
       name: form.name.value.trim(),
+      telegrm: form.name.value.trim(),
       email: form.email.value.trim(),
       message: form.message.value.trim()
     };
-    if(!data.name || !data.email || !data.message){
+    if(!data.name || !data.email || !data.telegrm || !data.message){
       showPopup('Please fill all fields', false);
       return;
     }
