@@ -65,13 +65,14 @@ button.submit{background:#0070ff;color:#fff;padding:12px;border-radius:10px;bord
 footer{background:#0b1220;color:#fff;padding:18px;text-align:center}
 
 /* dark mode */
+.dark-mide .hero{background:#ob0f13;}
 .dark-mode{background:#0b0f13;color:#e6eef8}
 .dark-mode .navbar{background:rgba(6,10,14,0.62)}
 .dark-mode .side-menu{background:#071026;color:#dbeafe}
 .dark-mode .side-menu li:hover{background:#021028}
 .dark-mode .card{background:#071226;color:#cfe7ff;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
 .dark-mode .price-list{background:#021028;color:#cfe7ff}
-.dark-mode input, .dark-mode textarea{background:#071226;border:1px solid #0b2340;color:#cfe7ff}
+/*.dark-mode input, .dark-mode textarea{background:#071226;border:1px solid #0b2340;color:#cfe7ff}*/
 
 /* scroll-top */
 .scroll-top-wrap{position:fixed;right:20px;bottom:20px;z-index:1400;display:flex;align-items:center;justify-content:center}
