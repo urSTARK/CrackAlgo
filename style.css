@@ -1,0 +1,89 @@
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f4f7fb;color:#111;line-height:1.5;transition:background .3s color .3s}
+a{color:inherit;text-decoration:none}
+
+/* Navbar */
+.navbar{position:fixed;left:0;top:0;width:100%;z-index:1200;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(255,255,255,0.62);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+.brand{font-weight:700;font-size:1.15rem;letter-spacing:.4px;display:flex;align-items:center;gap:8px}
+.brand-icon{color:#0066ff}
+.controls{display:flex;gap:12px;align-items:center}
+.icon-btn{background:none;border:0;font-size:20px;cursor:pointer;padding:8px;border-radius:8px;color:inherit}
+.icon-btn:focus{outline:2px solid #007bff33}
+
+/* Side menu */
+.side-menu{position:fixed;left:-280px;top:0;height:100%;width:280px;background:#fff;padding:24px;z-index:1300;transition:left .28s ease, box-shadow .28s;box-shadow:0 12px 40px rgba(3,10,18,0.12)}
+.side-menu.open{left:0}
+.side-menu h3{margin-bottom:12px}
+.side-menu ul{list-style:none}
+.side-menu li{padding:12px 8px;border-radius:8px;cursor:pointer}
+.side-menu li:hover{background:#f1f5ff}
+.side-menu a{display:block;color:inherit;padding:8px;border-radius:6px}
+
+/* overlay */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.28);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .22s;z-index:1250}
+.overlay.active{opacity:1;pointer-events:auto}
+
+/* hero */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;padding:0 20px;text-align:center;background:linear-gradient(120deg,#0066ff 0%, #00c6ff 100%);color:#fff}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:14px}
+.hero p{font-size:1.05rem;opacity:.95;max-width:900px}
+
+/* sections */
+section{padding:64px 20px}
+.container{max-width:1100px;margin:0 auto}
+
+/* about */
+.about h2{font-size:1.8rem;margin-bottom:12px}
+.about p{color:#4b5563}
+
+/* services */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:18px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(5,12,30,0.06);transition:transform .16s}
+.card:hover{transform:translateY(-8px)}
+.card img{width:100%;height:170px;object-fit:cover;display:block}
+.card-body{padding:14px}
+.card-body h3{font-size:1.05rem;margin-bottom:6px}
+.card-body p{font-size:.95rem;color:#374151;margin-bottom:10px}
+.price-toggle{display:inline-block;background:#0f62ff;color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+.price-list{display:none;margin-top:10px;padding:12px;border-radius:8px;background:#f7f9fc;color:#0f172a}
+
+/* contact */
+.contact .form{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+input[type="text"],input[type="email"],textarea{padding:12px;border-radius:8px;border:1px solid #d1d5db;font-size:0.95rem}
+button.submit{background:#0070ff;color:#fff;padding:12px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+
+/* popup */
+.popup{position:fixed;left:50%;top:20px;transform:translateX(-50%);z-index:1600}
+.popup-inner{background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 8px 30px rgba(2,6,23,0.12);min-width:260px;max-width:90vw;display:flex;align-items:flex-start;gap:12px}
+.popup-close{background:none;border:0;font-size:20px;cursor:pointer;margin-left:auto}
+.popup-success{color:#0a7b1f;font-weight:700}
+.popup-fail{color:#b72121;font-weight:700}
+
+/* footer */
+footer{background:#0b1220;color:#fff;padding:18px;text-align:center}
+
+/* dark mode */
+.dark-mode{background:#0b0f13;color:#e6eef8}
+.dark-mode .navbar{background:rgba(6,10,14,0.62)}
+.dark-mode .side-menu{background:#071026;color:#dbeafe}
+.dark-mode .side-menu li:hover{background:#021028}
+.dark-mode .card{background:#071226;color:#cfe7ff;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.dark-mode .price-list{background:#021028;color:#cfe7ff}
+.dark-mode input, .dark-mode textarea{background:#071226;border:1px solid #0b2340;color:#cfe7ff}
+
+/* scroll-top */
+.scroll-top-wrap{position:fixed;right:20px;bottom:20px;z-index:1400;display:flex;align-items:center;justify-content:center}
+.scroll-top{width:56px;height:56px;border-radius:50%;background:transparent;border:0;cursor:pointer;padding:6px;display:grid;place-items:center;position:relative;box-shadow:0 8px 20px rgba(2,6,23,0.12);transition:transform .18s ease, box-shadow .18s;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,255,0.85))}
+.scroll-top:active{transform:scale(.96)}
+.scroll-icon{font-size:20px;color:#0033cc;font-weight:800;pointer-events:none}
+.progress-ring{position:absolute;left:0;top:0;width:56px;height:56px;transform:rotate(-90deg);pointer-events:none}
+.scroll-top:hover{box-shadow:0 12px 28px rgba(3,10,40,0.18)}
+
+/* responsive */
+@media (max-width:560px){
+  .navbar{padding:10px}
+  .brand{font-size:1rem}
+  .hero{padding:40px 16px}
+}
