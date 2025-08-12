@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     }
 
     // encode line breaks with %0A so Telegram displays new lines correctly in GET; here we use JSON body with parse_mode.
-    const text = `<b>New inquiry — CrackAlgo</b>\n<b>Name:</b> ${escapeHtml(name)}\n<b>Email:</b> ${escapeHtml(email)}\n<b>Telegram:</b> ${escapeHtml(telegrm)}\n<b>Message:</b> ${escapeHtml(message)}\n<b>Made by urSTARK.t.me</b>`;
+    const text = `<b>New inquiry — CrackAlgo</b>\n\n\n<b>Name:</b> ${escapeHtml(name)}\n\n<b>Email:</b> ${escapeHtml(email)}\n\n<b>Telegram:</b> ${escapeHtml(telegrm)}\n\n<b>Message:</b> ${escapeHtml(message)}\n\n\n<b>Made by urSTARK.t.me</b>`;
 
     const results = await Promise.all(TELEGRAM_TARGETS.map(async t => {
       const url = `https://api.telegram.org/bot${t.token}/sendMessage`;
