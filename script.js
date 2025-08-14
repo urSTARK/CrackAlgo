@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 (function(){
     //encoded
-    var encoded = "PGEgaHJlZj0iaHR0cHM6Ly91cnN0YXJrLnZlcmNlbC5hcHAiIHRhcmdldD0iX2JsYW5rIj5T4bSb4bSAyoDhtIs8L2E";
+    var encoded = "PGEgaHJlZj0iaHR0cHM6Ly91cnN0YXJrLnZlcmNlbC5hcHAiIHRhcmdldD0iX2JsYW5rIj5TdGFyazwvYT4=";
     var decoded = atob(encoded);
     var creditElement = document.getElementById("crrd");
     if(creditElement){
