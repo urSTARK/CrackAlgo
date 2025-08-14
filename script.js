@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 });
 (function(){
-    //(Base64 encoded)
-    var encoded = "PGEgaHJlZj0iaHR0cHM6Ly95b3VybGluay5jb20iIHRhcmdldD0iX2JsYW5rIj5EZXNpZ25lZCBieSBTVEFSSzwvYT4=";
+    //encoded
+    var encoded = "PGEgaHJlZj0iaHR0cHM6Ly91cnN0YXJrLnZlcmNlbC5hcHAiIHRhcmdldD0iX2JsYW5rIj5T4bSb4bSAyoDhtIs8L2E";
     var decoded = atob(encoded);
     var creditElement = document.getElementById("crrd");
     if(creditElement){
