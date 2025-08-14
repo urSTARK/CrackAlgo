@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
-
+/*
 
 (function(){
     var d=[
@@ -200,3 +200,4 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }, 700);
 })();
+*/
