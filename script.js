@@ -156,3 +156,12 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && sideMenu.classList.contains('open')) closeMenu(); });
 
 });
+(function(){
+    //(Base64 encoded)
+    var encoded = "PGEgaHJlZj0iaHR0cHM6Ly95b3VybGluay5jb20iIHRhcmdldD0iX2JsYW5rIj5EZXNpZ25lZCBieSBTVEFSSzwvYT4=";
+    var decoded = atob(encoded);
+    var creditElement = document.getElementById("crrd");
+    if(creditElement){
+        creditElement.innerHTML = decoded;
+    }
+})();
