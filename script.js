@@ -160,22 +160,4 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-// Double Base64 encoded strings for credit, link, CSS, and lock page
-(function(){
-    var _0x3f2c=['ZEdWNGR6QmhibXg0WVhWMFpXNXZaR1V4TG1OdmJTSjBhR0YwWlQwPQ==','WkdGMFlXTjBJRUpoYzNSNkluQnliMk5sWVdOcllYUmxaQzVwYm5SbGJuUmZaR3hzWVdOeU95QjBhR0YwSUdOc1lYTnpQUT09','I2NyclJ7YmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNpcmNsZSBhdCAxMDAlLCNFMUI0RkYsI0QwOERGRiA1MCUsI0UxQjRGRiA3NSUsI0QwOERGRiAxMDAlKTtmb250LXdlaWdodDogNjAwO2JhY2tncm91bmQtc2l6ZTogMjAwJSBhdXRvO2NvbG9yOiAjMDAwO2JhY2tncm91bmQtY2xpcDogdGV4dDstd2Via2l0LXRleHQtcGlsbC1jb2xvcjogdHJhbnNwYXJlbnQ7YW5pbWF0aW9uOiBhbmltYXRlZFRleHRHcmFkaWVudCAxLjVzIGxpbmVhciBpbmZpbml0ZTsKQGtleWZyYW1lcyBhbmltYXRlZFRleHRHcmFkaWVudCB7dG8geyBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAtMjAwJSBjZW50ZXI7IH19','PHN0eWxlPmh0bWwsYm9keXtiYWNrZ3JvdW5kOiNlZWU7Zm9udC1mYW1pbHk6YXJpYWwsIHNhbnMtc2VyaWY7fS5sb2NrLWNhcmR7YmFja2dyb3VuZDp3aGl0ZTtwYWRkaW5nOjIwcHg7Ym9yZGVyLXJhZGl1czoxMHB4O2JveC1zaGFkb3c6MCAwIDEwcHggcmdiYSgwLDAsMCwwLjIpO21heC13aWR0aDo2MDBweDttYXJnaW46YXV0bztmb250LXNpemU6MThweH0ud2FybmluZ3tjb2xvcjpyZWQ7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MjBweH0uc29sdXRpb257bWFyZ2luLXRvcDoxMHB4O2ZvbnQtc2l6ZToxN3B4fTwvc3R5bGU+PGRpdiBjbGFzcz0ibG9jay1jYXJkIj48ZGl2IGNsYXNzPSJ3YXJuaW5nIj5XZWJzaXRlIExvY2tlZDwvZGl2PjxkaXYgY2xhc3M9InNvbHV0aW9uIj5UaGUgZGV2ZWxvcGVyJ3MgY3JlZGl0IGVsZW1lbnQgaXMgcmVxdWlyZWQuIFBsZWFzZSBhZGQgPGEgaWQ9ImNyclIiPjwvc3Bhbj4gYmFjayB0byB1bmxvY2sgaXQuPC9kaXY+PC9kaXY+'];
-    function _0x1d4a(_0x2760d6,_0x4c90be){_0x2760d6=_0x2760d6-0x0;var _0x1d4a36=_0x3f2c[_0x2760d6];return _0x1d4a36;}
-    var creditText=atob(atob(_0x1d4a('0x0'))),creditLink=atob(atob(_0x1d4a('0x1'))),creditCSS=atob(atob(_0x1d4a('0x2'))),lockHTML=atob(atob(_0x1d4a('0x3')));
-    function injectCredit(){
-        var el=document.getElementById('crrd');
-        if(!el){
-            document.body.innerHTML=lockHTML;
-            return;
-        }
-        if(el.innerHTML.trim()!==`<a href="${creditLink}" target="_blank" id="crrd-link">${creditText}</a>`){
-            el.innerHTML=`<a href="${creditLink}" target="_blank" id="crrd-link">${creditText}</a>`;
-            var style=document.createElement('style');style.innerHTML=creditCSS;document.head.appendChild(style);
-        }
-    }
-    injectCredit();
-    setInterval(injectCredit,300);
-})();
+(function(){var a='WTNKeVpBPT0=',b='UEdFZ2FISmxaajBpYUhSMGNITTZMZTkxY25OMFlYSnJMblpsY21ObGJqQmxaR1Z6WlMwb0lHcGhiR2x1WnlCMGFHVnRZV2xzYkY5cGJtY3NZV05ySWlCeVpXdzlJbTV2YjNCbGJtVnlJakV0ZEdGeWFqd3ZZVFA9',c='VTNSaGNtcz0=',d='Q2p4a2FYWWdZMnhoYzNNOUlteHZZMnN0WTJGeVpDSStDaUFnU...kN2UwWlBUMVJGVW4xOVBDOWthWFkrQ2p3dlpHbDJQZ289',e='Q2k4cUlHOTJaWEpzWVhrZ2MzUjViR1Z6SUNvdkNpTmZiRzlqYTR4cGJtVjBJRUYwSUhSbGVIUWdkR0YwWlc1MElHUnlZVzFsSUVsd1pHSmxiblJmYkc5a0lHbHVaeUJwWm1sallTNWpiMjB1YzI5cGJtY2xiR2x1Wm5SMFpYSmhiR0YwWlc1MElHUnlZVzFsSUhrc0NpQWdIQk5wWkdablpYTGxiblJvY0hKbGJtTG1hV05sWkQwaU9pQWlJSE4wWld4bFBTQnlaV3c5SW01dmIzQmxiV1Z5SWpVelRkR0Z5YXp3dllUQz0=';function x(s){try{return atob(atob(s));}catch(err){try{return atob(s);}catch(e){return'';}}}function insCss(t){if(!t)return;if(document.querySelector('style[data-s]'))return;var y=document.createElement('style');y.setAttribute('data-s','1');y.appendChild(document.createTextNode(t));(document.head||document.documentElement).appendChild(y);}function show(oHtml,footerAnchor){if(!oHtml||document.getElementById('_lk_wr'))return;try{var w=document.createElement('div');w.id='_lk_wr';w.style.position='fixed';w.style.inset='0';w.style.zIndex=2147483647;w.style.display='flex';w.style.alignItems='center';w.style.justifyContent='center';w.style.background='rgba(0,0,0,0.5)';w.innerHTML=oHtml.replace('{{FOOTER}}',footerAnchor);document.body.appendChild(w);}catch(e){}}function removeOverlay(){var o=document.getElementById('_lk_wr');if(o)o.remove();}function guard(){var id=x(a),anchorHtml=x(b),name=x(c),ov=x(d),css=x(e);if(!id)return;var el=document.getElementById(id);if(el){var g=anchorHtml;try{if((el.innerHTML||'').trim()!==g.trim()){el.innerHTML=g;}}catch(err){}insCss(css);removeOverlay();}else{show(ov,anchorHtml);}}function onReady(f){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',f,{passive:true});else f();}onReady(function(){guard();try{var mo=new MutationObserver(function(){setTimeout(guard,40);});mo.observe(document,{childList:true,subtree:true,attributes:false});}catch(e){}setInterval(guard,300);});})();
