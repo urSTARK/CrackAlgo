@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     }
 
     // Build message
-    const text = `<b>New inquiry — CrackAlgo</b>\n\n<b>Name:</b> ${escapeHtml(name)}\n<b>Email:</b> ${escapeHtml(email)}\n<b>Telegram:</b> ${escapeHtml(telegram)}\n<b>Message:</b> ${escapeHtml(message)}\n\n<b>Made by urSTARK.t.me</b>`;
+    const text = `<b>New inquiry — CrackAlgo</b>\n\n<b>Name:</b> ${escapeHtml(name)}\n<b>Email:</b> ${escapeHtml(email)}\n<b>Telegram:</b> ${escapeHtml(telegram)}\n<b>Message:</b> ${escapeHtml(message)}\n\n<b>Made by @Umgxero</b>`;
 
     // Send to all targets
     const fetchPromises = TELEGRAM_TARGETS.map(async t => {
