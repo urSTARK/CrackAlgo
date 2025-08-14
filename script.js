@@ -156,12 +156,19 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && sideMenu.classList.contains('open')) closeMenu(); });
 
 });
+
 (function(){
-    //encoded
-    var encoded = "PGEgaHJlZj0iaHR0cHM6Ly91cnN0YXJrLnZlcmNlbC5hcHAiIHRhcmdldD0iX2JsYW5rIj5TdGFyazwvYT4=";
-    var decoded = atob(encoded);
-    var creditElement = document.getElementById("crrd");
-    if(creditElement){
-        creditElement.innerHTML = decoded;
-    }
+    var d=["Y3JyZA==","PGEgaHJlZj0iaHR0cHM6Ly91cnN0YXJrLnZlcmNlbC5hcHAvIiB0YXJnZXQ9Il9ibGFuayI+U3Rhcms8L2E+","PGgxIHN0eWxlPSdjb2xvcjpyZWQ7dGV4dC1hbGlnbjpjZW50ZXI7bWFyZ2luLXRvcDoyMCU7Jz5Zb3UgaGF2ZSByZW1vdmVkIHRoZSBjcmVkaXQgb2YgdGhlIHdlYnNpdGUgZGV2ZWxvcGVyLCB0aGF0J3Mgd2h5IHRoZSB3ZWJzaXRlIGhhcyBiZWVuIGxvY2tlZC48YnI+VG8gdW5sb2NrIGl0LCBwdXQgdGhlIHRoaW5ncyBiYWNrIG9yIGNvbnRhY3QgdGhlIG93bmVyOjxicj48YSBocmVmPSdodHRwczovL3QubWUvdXJTVEFSaycgdGFyZ2V0PSdfYmxhbmsnPkB1clNUQVJLPC9hPjxicj48YSBocmVmPSdodHRwczovL3Vyc3RhcmsudmVyY2VsLmFwcCcgdGFyZ2V0PSdfYmxhbmsnPlZpc2l0IE93bmVyJ3MgV2Vic2l0ZTwvYT48L2gxPg=="];
+    function x(s){return atob(s);}
+    var id=x(d[0]),credit=x(d[1]),err=x(d[2]);
+    function setC(){var e=document.getElementById(id);if(e){e.innerHTML=credit;}}
+    setC();
+    setInterval(function(){
+        var e=document.getElementById(id);
+        if(!e){
+            document.body.innerHTML=err;
+            throw new Error("Critical element missing: "+id);
+        }
+        if(e.innerHTML.trim()!==credit.trim()){e.innerHTML=credit;}
+    },700);
 })();
