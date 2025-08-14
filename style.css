@@ -93,6 +93,6 @@ button.submit{background:#0070ff;color:#fff;padding:12px;border-radius:10px;bord
   .side-menu.open{left:0}
 }
 /* footer */
-.credit a {background: radial-gradient(circle at 100%,#E0B4FF,#D08DFF 50%,#E0B4FF 75%,#D08DFF 100%);font-weight: 600;background-size: 200% auto;color: #000;background-clip: text;-webkit-text-fill-color: transparent;animation: animatedTextGradient 1.5s linear infinite;}
+#crrd {background: radial-gradient(circle at 100%,#E0B4FF,#D08DFF 50%,#E0B4FF 75%,#D08DFF 100%);font-weight: 600;background-size: 200% auto;color: #000;background-clip: text;-webkit-text-fill-color: transparent;animation: animatedTextGradient 1.5s linear infinite;}
 @keyframes animatedTextGradient {
   to { background-position: -200% center; }}
