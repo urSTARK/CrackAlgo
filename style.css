@@ -92,3 +92,4 @@ button.submit{background:#0070ff;color:#fff;padding:12px;border-radius:10px;bord
   .side-menu{width:100%;left:-100%}
   .side-menu.open{left:0}
 }
+@keyframes animatedTextGradient{to{background-position:-200% center;}}
