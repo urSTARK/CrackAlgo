@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function(){
       telegram: form.telegram.value.trim(),
       message: form.message.value.trim()
     };
-    if(!data.name || !data.email || !data.telegram || !data.message){
+    if(!data.name || !data.email || !data.message){
       showPopup('Please fill all fields', false);
       return;
     }
